@@ -2,7 +2,7 @@ $(function () {
   var form = $("#registration");
   form.validate({
     errorPlacement: function errorPlacement(error, element) {
-      element.before(error);
+      element.after(error);
     },
     rules: {},
   });
