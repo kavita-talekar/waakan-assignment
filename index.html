@@ -1,354 +1,448 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Registration Form</title>
-        <!-- Mobile Specific Metas -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <!-- Font-->
-        <link rel="stylesheet" type="text/css" href="css/opensans-font.css">
-        <link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
-        <!-- Main Style Css -->
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
-        <!-- Radio Button Style Css -->
-        <link rel="stylesheet" type="text/css" href="css/custom-radio.css"/>
-        <!-- Calendar Style Css -->
-        <link rel="stylesheet" type="text/css" href="css/dcalendar.picker.css">
-    </head>
-    <body>
-        <div class="page-content">
-            <div class="form-v1-content">
-                <div class="wizard-form">
-                    <form class="form-register" name="registration" action="#" method="post">
-                        <div id="form-total">
-                            <!-- SECTION 1 -->
-                            <h2>
-                                <p class="step-icon"><span>01</span></p>
-                                <span class="step-text">Peronal Infomation</span>
-                            </h2>
-                            <section>
-                                <div class="inner">
-                                    <div class="wizard-header">
-                                        <h3 class="heading">Peronal Infomation</h3>
-                                        <p>Please enter your infomation and proceed to the next step so we can build your accounts.  </p>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Name / नाव</legend>
-                                                <input type="text" class="form-control" id="fullname" name="full-name" placeholder="Enter Name" required>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Address / पत्ता</legend>
-                                                <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" required>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder ">
-                                            <fieldset>
-                                                <legend>Birth Date / जन्म तारीख</legend>
-                                                <input class="form-control" type="text" id="dob" name="dob" placeholder="dd/mm/YYYY" required>
-                                            </fieldset>
-                                        </div>
-                                        <div class="form-holder">
-                                            <fieldset>
-                                                <legend>Age / वय</legend>
-                                                <input type="text" class="form-control" id="age" name="age" placeholder="Age" required>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder ">
-                                            <fieldset>
-                                                <legend>Height(feet) / उंची</legend>
-                                                <input class="form-control" type="text" id="height" name="height" placeholder="Height" required>
-                                            </fieldset>
-                                        </div>
-                                        <div class="form-holder">
-                                            <fieldset>
-                                                <legend>Weight (Kg)/ वजन</legend>
-                                                <input type="text" class="form-control" id="weight" name="weight" placeholder="Weight" required>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Your Email / ईमेल</legend>
-                                                <input type="text" name="your_email" id="your_email" class="form-control" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Enter Email" required>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Mobile Number / मोबाईल</legend>
-                                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Mobile No." required>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Gender / लिंग</legend>
-                                                <div class="container">
-                                                    <div class="radio">
-                                                        <input type="radio" value="Male" name='gender' id='male' checked/>
-                                                        <label for="male"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="right">Male</div>
-                                                <div class="container">
-                                                    <div class="radio">
-                                                        <input type="radio" value="Female" name='gender' id='female' />
-                                                        <label for="female"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="right">Female</div>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <!-- SECTION 2 -->
-                            <h2>
-                                <p class="step-icon"><span>02</span></p>
-                                <span class="step-text">Medical History</span>
-                            </h2>
-                            <section>
-                                <div class="inner">
-                                    <div class="wizard-header">
-                                        <h3 class="heading">Medical History</h3>
-                                        <p>Please enter your medical history and proceed to the next step so we can build your accounts.</p>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Hypertension / उच्च रक्तदाब</legend>
-                                                <div class="container">
-                                                    <div class="radio">
-                                                        <input type="radio" value="Yes" name='Hypertension' id="Hypertension-yes" onclick="show_desc_1();" />
-                                                        <label for="Hypertension-yes"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="right">Yes</div>
-                                                <div class="container">
-                                                    <div class="radio">
-                                                        <input type="radio" value="No" name='Hypertension' id="Hypertension-no" onclick="hide_desc_1();" checked/>
-                                                        <label for="Hypertension-no"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="right">No</div>
-                                                <textarea name="description"  rows="3" cols="50" placeholder="Add desc for disease" id="text_desc_1"  class="textarea-desc" style="display: none;" required></textarea>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Diabetes / मधुमेह</legend>
-                                                <div class="container">
-                                                    <div class="radio">
-                                                        <input type="radio" value="Yes" name='Diabetes' id="Diabetes-yes" onclick="show_desc_2();"/>
-                                                        <label for="Diabetes-yes"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="right">Yes</div>
-                                                <div class="container">
-                                                    <div class="radio">
-                                                        <input type="radio" value="No" name='Diabetes' id="Diabetes-no" onclick="hide_desc_2();" />
-                                                        <label for="Diabetes-no"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="right">No</div>
-                                                <textarea name="description"  rows="3" cols="50" placeholder="Add desc for disease" id="text_desc_2" class="textarea-desc"  style="display: none;" required></textarea>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Heartattack / हार्टटॅक</legend>
-                                                <div class="container">
-                                                    <div class="radio">
-                                                        <input type="radio" value="Yes" name='Heartattack' id="Heartattack-yes" onclick="show_desc_3();"/>
-                                                        <label for="Heartattack-yes"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="right">Yes</div>
-                                                <div class="container">
-                                                    <div class="radio">
-                                                        <input type="radio" value="No" name='Heartattack' id="Heartattack-no" onclick="hide_desc_3();" />
-                                                        <label for="Heartattack-no"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="right">No</div>
-                                                <textarea name="description"  rows="3" cols="50" placeholder="Add desc for disease" id="text_desc_3" class="textarea-desc"  style="display: none;" required></textarea>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Paralysis / अर्धांगवायू</legend>
-                                                <div class="container">
-                                                    <div class="radio">
-                                                        <input type="radio" value="Yes" name='Paralysis' id="Paralysis-yes" onclick="show_desc_4();"/>
-                                                        <label for="Paralysis-yes"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="right">Yes</div>
-                                                <div class="container">
-                                                    <div class="radio">
-                                                        <input type="radio" value="No" name='Paralysis' id="Paralysis-no" onclick="hide_desc_4();" />
-                                                        <label for="Paralysis-no"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="right">No</div>
-                                                <textarea name="description"  rows="3" cols="50" placeholder="Add desc for disease" id="text_desc_4" class="textarea-desc"  style="display: none;" required></textarea>
-                                            </fieldset>
-                                        </div>
-                                    </div>        
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Photo</legend>
-                                                <input type="file" class="form-control" id="report-file" name="report-file">
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <!-- SECTION 3 -->
-                            <h2>
-                                <p class="step-icon"><span>03</span></p>
-                                <span class="step-text">Identity Proof</span>
-                            </h2>
-                            <section>
-                                <div class="inner">
-                                    <div class="wizard-header">
-                                        <h3 class="heading">Identity Proof</h3>
-                                        <p>Please upload your identity proof document and proceed to the next step so we can build your accounts.</p>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Identity Proof</legend>
-                                                <input class="form-control" type="text" id="id-proof" name="id-proof" placeholder="Identity Proof" required>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-holder form-holder-2">
-                                            <fieldset>
-                                                <legend>Proof File</legend>
-                                                <input type="file" class="form-control" id="id-proof-file" name="id-proof-file">
-                                            </fieldset>
-                                        </div>
-                                    </div>                                
-                                </div>
-                            </section>
+  <head>
+    <meta charset="utf-8" />
+    <title>Registration Form</title>
+    <!-- Mobile Specific Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="css/opensans-font.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css"
+    />
+    <!-- Main Style Css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- Radio Button Style Css -->
+    <link rel="stylesheet" type="text/css" href="css/custom-radio.css" />
+    <!-- Calendar Style Css -->
+    <link rel="stylesheet" type="text/css" href="css/dcalendar.picker.css" />
+  </head>
+  <body>
+    <div class="page-content">
+      <div class="form-v1-content">
+        <div class="wizard-form">
+          <form
+            class="form-register"
+            id="registration"
+            name="registration"
+            action="#"
+            method="post"
+          >
+            <div id="form-total">
+              <!-- SECTION 1 -->
+              <h2>
+                <p class="step-icon"><span>01</span></p>
+                <span class="step-text">Peronal Infomation</span>
+              </h2>
+              <section>
+                <div class="inner">
+                  <div class="wizard-header">
+                    <h3 class="heading">Peronal Infomation</h3>
+                    <p>
+                      Please enter your infomation and proceed to the next step
+                      so we can build your accounts.
+                    </p>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <legend>Name / नाव</legend>
+                      <input
+                        type="text"
+                        class="form-control input-field"
+                        id="fullname"
+                        placeholder="Full Name"
+                        name="full-name"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <legend>Address / पत्ता</legend>
+                      <input
+                        type="text"
+                        class="form-control input-field"
+                        id="address"
+                        name="address"
+                        placeholder="Enter Address"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder">
+                      <legend>Birth Date / जन्म तारीख</legend>
+                      <input
+                        class="form-control input-field"
+                        type="text"
+                        id="dob"
+                        name="dob"
+                        placeholder="dd/mm/YYYY"
+                        required
+                      />
+                    </div>
+                    <div class="form-holder">
+                      <legend>Age / वय</legend>
+                      <input
+                        type="number"
+                        class="form-control input-field"
+                        id="age"
+                        name="age"
+                        maxlength="3"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder">
+                      <legend>Height (Cm) / उंची</legend>
+                      <input
+                        class="form-control input-field"
+                        type="number"
+                        id="height"
+                        name="height"
+                        maxlength="3"
+                        placeholder="Enter Height"
+                        required
+                      />
+                    </div>
+                    <div class="form-holder">
+                      <legend>Weight (Kg)/ वजन</legend>
+                      <input
+                        type="number"
+                        class="form-control input-field"
+                        id="weight"
+                        name="weight"
+                        maxlength="3"
+                        placeholder="Enter Weight"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <legend>Your Email / ईमेल</legend>
+                      <input
+                        type="email"
+                        name="your_email"
+                        id="your_email"
+                        class="form-control input-field"
+                        pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
+                        placeholder="Enter Email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <legend>Mobile Number / मोबाईल</legend>
+                      <input
+                        type="number"
+                        class="form-control input-field"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter Mobile No"
+                        minlength="10"
+                        maxlength="10"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <legend>Gender / लिंग</legend>
+                      <div class="container">
+                        <div class="radio">
+                          <input
+                            type="radio"
+                            value="Male"
+                            name="gender"
+                            id="male"
+                            checked
+                          />
+                          <label for="male"></label>
                         </div>
-                    </form>
+                      </div>
+                      <div class="right">Male</div>
+                      <div class="container">
+                        <div class="radio">
+                          <input
+                            type="radio"
+                            value="Female"
+                            name="gender"
+                            id="female"
+                          />
+                          <label for="female"></label>
+                        </div>
+                      </div>
+                      <div class="right">Female</div>
+                    </div>
+                  </div>
                 </div>
+              </section>
+              <!-- SECTION 2 -->
+              <h2>
+                <p class="step-icon"><span>02</span></p>
+                <span class="step-text">Medical History</span>
+              </h2>
+              <section>
+                <div class="inner">
+                  <div class="wizard-header">
+                    <h3 class="heading">Medical History</h3>
+                    <p>
+                      Please enter your medical history and proceed to the next
+                      step so we can build your accounts.
+                    </p>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <fieldset>
+                        <legend>Hypertension / उच्च रक्तदाब</legend>
+                        <div class="container">
+                          <div class="radio">
+                            <input
+                              type="radio"
+                              value="Yes"
+                              name="Hypertension"
+                              id="Hypertension-yes"
+                              onclick="showDesc('#Hypertension-desc');"
+                            />
+                            <label for="Hypertension-yes"></label>
+                          </div>
+                        </div>
+                        <div class="right">Yes</div>
+                        <div class="container">
+                          <div class="radio">
+                            <input
+                              type="radio"
+                              value="No"
+                              name="Hypertension"
+                              id="Hypertension-no"
+                              onclick="hideDesc('#Hypertension-desc');"
+                              checked
+                            />
+                            <label for="Hypertension-no"></label>
+                          </div>
+                        </div>
+                        <div class="right">No</div>
+                        <textarea
+                          name="description"
+                          rows="3"
+                          cols="50"
+                          placeholder="Add desc for disease"
+                          id="Hypertension-desc"
+                          class="textarea-desc"
+                          style="display: none"
+                          required
+                        ></textarea>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <fieldset>
+                        <legend>Diabetes / मधुमेह</legend>
+                        <div class="container">
+                          <div class="radio">
+                            <input
+                              type="radio"
+                              value="Yes"
+                              name="Diabetes"
+                              id="Diabetes-yes"
+                              onclick="showDesc('#Diabetes-desc');"
+                            />
+                            <label for="Diabetes-yes"></label>
+                          </div>
+                        </div>
+                        <div class="right">Yes</div>
+                        <div class="container">
+                          <div class="radio">
+                            <input
+                              type="radio"
+                              value="No"
+                              name="Diabetes"
+                              id="Diabetes-no"
+                              onclick="hideDesc('#Diabetes-desc');"
+                              checked
+                            />
+                            <label for="Diabetes-no"></label>
+                          </div>
+                        </div>
+                        <div class="right">No</div>
+                        <textarea
+                          name="description"
+                          rows="3"
+                          cols="50"
+                          placeholder="Add desc for disease"
+                          id="Diabetes-desc"
+                          class="textarea-desc"
+                          style="display: none"
+                          required
+                        ></textarea>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <fieldset>
+                        <legend>Heartattack / हार्टटॅक</legend>
+                        <div class="container">
+                          <div class="radio">
+                            <input
+                              type="radio"
+                              value="Yes"
+                              name="Heartattack"
+                              id="Heartattack-yes"
+                              onclick="showDesc('#Heartattack-desc');"
+                            />
+                            <label for="Heartattack-yes"></label>
+                          </div>
+                        </div>
+                        <div class="right">Yes</div>
+                        <div class="container">
+                          <div class="radio">
+                            <input
+                              type="radio"
+                              value="No"
+                              name="Heartattack"
+                              id="Heartattack-no"
+                              onclick="hideDesc('#Heartattack-desc');"
+                              checked
+                            />
+                            <label for="Heartattack-no"></label>
+                          </div>
+                        </div>
+                        <div class="right">No</div>
+                        <textarea
+                          name="description"
+                          rows="3"
+                          cols="50"
+                          placeholder="Add desc for disease"
+                          id="Heartattack-desc"
+                          class="textarea-desc"
+                          style="display: none"
+                          required
+                        ></textarea>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <fieldset>
+                        <legend>Paralysis / अर्धांगवायू</legend>
+                        <div class="container">
+                          <div class="radio">
+                            <input
+                              type="radio"
+                              value="Yes"
+                              name="Paralysis"
+                              id="Paralysis-yes"
+                              onclick="showDesc('#Paralysis-desc');"
+                            />
+                            <label for="Paralysis-yes"></label>
+                          </div>
+                        </div>
+                        <div class="right">Yes</div>
+                        <div class="container">
+                          <div class="radio">
+                            <input
+                              type="radio"
+                              value="No"
+                              name="Paralysis"
+                              id="Paralysis-no"
+                              onclick="hideDesc('#Paralysis-desc');"
+                              checked
+                            />
+                            <label for="Paralysis-no"></label>
+                          </div>
+                        </div>
+                        <div class="right">No</div>
+                        <textarea
+                          name="description"
+                          rows="3"
+                          cols="50"
+                          placeholder="Add desc for disease"
+                          id="Paralysis-desc"
+                          class="textarea-desc"
+                          style="display: none"
+                          required
+                        ></textarea>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <fieldset>
+                        <legend>Photo</legend>
+                        <input
+                          type="file"
+                          class="form-control"
+                          id="report-file"
+                          name="report-file"
+                          required
+                        />
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- SECTION 3 -->
+              <h2>
+                <p class="step-icon"><span>03</span></p>
+                <span class="step-text">Identity Proof</span>
+              </h2>
+              <section>
+                <div class="inner">
+                  <div class="wizard-header">
+                    <h3 class="heading">Identity Proof</h3>
+                    <p>
+                      Please upload your identity proof document and proceed to
+                      the next step so we can build your accounts.
+                    </p>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <legend>Identity Proof</legend>
+                      <input
+                        class="form-control input-field"
+                        type="text"
+                        id="id-proof"
+                        name="id-proof"
+                        placeholder="Identity Proof"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <fieldset>
+                        <legend>Proof File</legend>
+                        <input
+                          type="file"
+                          class="form-control"
+                          id="id-proof-file"
+                          name="id-proof-file"
+                          required
+                        />
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
+          </form>
         </div>
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/jquery.steps.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/dcalendar.picker.js"></script>
-    </body>
+      </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.steps.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/dcalendar.picker.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

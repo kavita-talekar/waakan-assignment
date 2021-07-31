@@ -1,80 +1,58 @@
-$(function(){
-    $("#form-total").steps({
-        headerTag: "h2",
-        bodyTag: "section",
-        transitionEffect: "fade",
-        enableAllSteps: true,
-        stepsOrientation: "vertical",
-        autoFocus: true,
-        transitionEffectSpeed: 500,
-        titleTemplate : '<div class="title">#title#</div>',
-        labels: {
-            previous : 'Back Step',
-            next : '<i class="zmdi zmdi-arrow-right"></i>',
-            finish : '<i class="zmdi zmdi-check"></i>',
-            current : ''
-        }
+$(function () {
+  var form = $("#registration");
+  form.validate({
+    errorPlacement: function errorPlacement(error, element) {
+      element.before(error);
+    },
+    rules: {},
+  });
+  // Applied form steps
+  form.children("#form-total").steps({
+    headerTag: "h2",
+    bodyTag: "section",
+    transitionEffect: "fade",
+    enableAllSteps: true,
+    stepsOrientation: "vertical",
+    autoFocus: true,
+    transitionEffectSpeed: 500,
+    titleTemplate: '<div class="title">#title#</div>',
+    labels: {
+      previous: "<small>Previous</small>",
+      next: "<small>Next</small>",
+      finish: "<small>Save</small>",
+      current: "",
+    },
+    onStepChanging: function (event, currentIndex, newIndex) {
+      form.validate().settings.ignore = ":disabled,:hidden";
+      return form.valid();
+    },
+    onFinishing: function (event, currentIndex) {
+      form.validate().settings.ignore = ":disabled";
+      return form.valid();
+    },
+    onFinished: function (event, currentIndex) {
+      alert("Thank you. Your data submitted successfully!");
+      //form.submit();
+    },
+  });
+
+  // Applied calander
+  $("#dob")
+    .dcalendarpicker()
+    .on("dateselected", function (e) {
+      var birthDay = e.date;
+      var DOB = new Date(birthDay);
+      var today = new Date();
+      var age = today.getTime() - DOB.getTime();
+      age = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
+      $("#age").val(age);
     });
-    // $("form[name='registration']").validate({
-    //     rules: { 
-    //       fullname : "required",
-    //       address: "required",
-    //       email: {
-    //         required: true,
-    //         email: true
-    //       },
-         
-    //     },
-    //     // Specify validation error messages
-    //     messages: {
-    //       name: "Please enter your firstname",
-    //       addres: "Please enter your address",
-
-    //       email: "Please enter a valid email address"
-    //     },
-
-    //     submitHandler: function(form) {
-    //       form.submit();
-    //     }
-    //   });
-    $('#dob').dcalendarpicker();
 });
 
-function show_desc_1()
-	{
-		document.getElementById('text_desc_1').style.display="block";
-    }
-    function show_desc_2()
-	{
-		document.getElementById('text_desc_2').style.display="block";
-    }
-    function show_desc_3()
-	{
-		document.getElementById('text_desc_3').style.display="block";
-    }
-    function show_desc_4()
-	{
-		document.getElementById('text_desc_4').style.display="block";
-    }
-    
-    
-
-    function hide_desc_1()
-	{
-	document.getElementById('text_desc_1').style.display="none";
+function showDesc(id) {
+  $(id).show();
 }
-    function hide_desc_2()
-    {
-    document.getElementById('text_desc_2').style.display="none";
+
+function hideDesc(id) {
+  $(id).hide();
 }
-    function hide_desc_3()
-	{
-        document.getElementById('text_desc_3').style.display="none";
-    }
-    function hide_desc_4()
-	{
-        document.getElementById('text_desc_4').style.display="none";
-    }
-    
-
-
