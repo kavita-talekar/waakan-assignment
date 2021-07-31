@@ -19,7 +19,7 @@
         <div class="page-content">
             <div class="form-v1-content">
                 <div class="wizard-form">
-                    <form class="form-register" action="#" method="post">
+                    <form class="form-register" name="registration" action="#" method="post">
                         <div id="form-total">
                             <!-- SECTION 1 -->
                             <h2>
@@ -35,29 +35,29 @@
                                     <div class="form-row">
                                         <div class="form-holder form-holder-2">
                                             <fieldset>
-                                                <legend>Full Name</legend>
-                                                <input type="text" class="form-control" id="full-name" name="full-name" placeholder="Full Name" required>
+                                                <legend>Name / नाव</legend>
+                                                <input type="text" class="form-control" id="fullname" name="full-name" placeholder="Enter Name" required>
                                             </fieldset>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-holder form-holder-2">
                                             <fieldset>
-                                                <legend>Address</legend>
-                                                <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+                                                <legend>Address / पत्ता</legend>
+                                                <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" required>
                                             </fieldset>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-holder ">
                                             <fieldset>
-                                                <legend>Birth Date</legend>
-                                                <input class="form-control" type="text" id="dob" name="dob" placeholder="Birth Date" required>
+                                                <legend>Birth Date / जन्म तारीख</legend>
+                                                <input class="form-control" type="text" id="dob" name="dob" placeholder="dd/mm/YYYY" required>
                                             </fieldset>
                                         </div>
                                         <div class="form-holder">
                                             <fieldset>
-                                                <legend>Age</legend>
+                                                <legend>Age / वय</legend>
                                                 <input type="text" class="form-control" id="age" name="age" placeholder="Age" required>
                                             </fieldset>
                                         </div>
@@ -65,13 +65,13 @@
                                     <div class="form-row">
                                         <div class="form-holder ">
                                             <fieldset>
-                                                <legend>Height (Cm)</legend>
+                                                <legend>Height(feet) / उंची</legend>
                                                 <input class="form-control" type="text" id="height" name="height" placeholder="Height" required>
                                             </fieldset>
                                         </div>
                                         <div class="form-holder">
                                             <fieldset>
-                                                <legend>Weight (Kg)</legend>
+                                                <legend>Weight (Kg)/ वजन</legend>
                                                 <input type="text" class="form-control" id="weight" name="weight" placeholder="Weight" required>
                                             </fieldset>
                                         </div>
@@ -79,23 +79,23 @@
                                     <div class="form-row">
                                         <div class="form-holder form-holder-2">
                                             <fieldset>
-                                                <legend>Your Email</legend>
-                                                <input type="text" name="your_email" id="your_email" class="form-control" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="example@email.com" required>
+                                                <legend>Your Email / ईमेल</legend>
+                                                <input type="text" name="your_email" id="your_email" class="form-control" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Enter Email" required>
                                             </fieldset>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-holder form-holder-2">
                                             <fieldset>
-                                                <legend>Mobile Number</legend>
-                                                <input type="text" class="form-control" id="phone" name="phone" placeholder="+91 9999999999" required>
+                                                <legend>Mobile Number / मोबाईल</legend>
+                                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Mobile No." required>
                                             </fieldset>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-holder form-holder-2">
                                             <fieldset>
-                                                <legend>Gender</legend>
+                                                <legend>Gender / लिंग</legend>
                                                 <div class="container">
                                                     <div class="radio">
                                                         <input type="radio" value="Male" name='gender' id='male' checked/>
@@ -129,91 +129,95 @@
                                     <div class="form-row">
                                         <div class="form-holder form-holder-2">
                                             <fieldset>
-                                                <legend>Hypertension</legend>
+                                                <legend>Hypertension / उच्च रक्तदाब</legend>
                                                 <div class="container">
                                                     <div class="radio">
-                                                        <input type="radio" value="Yes" name='Hypertension' id="Hypertension-yes" checked/>
+                                                        <input type="radio" value="Yes" name='Hypertension' id="Hypertension-yes" onclick="show_desc_1();" />
                                                         <label for="Hypertension-yes"></label>
                                                     </div>
                                                 </div>
                                                 <div class="right">Yes</div>
                                                 <div class="container">
                                                     <div class="radio">
-                                                        <input type="radio" value="No" name='Hypertension' id="Hypertension-no" />
+                                                        <input type="radio" value="No" name='Hypertension' id="Hypertension-no" onclick="hide_desc_1();" checked/>
                                                         <label for="Hypertension-no"></label>
                                                     </div>
                                                 </div>
                                                 <div class="right">No</div>
+                                                <textarea name="description"  rows="3" cols="50" placeholder="Add desc for disease" id="text_desc_1"  class="textarea-desc" style="display: none;" required></textarea>
                                             </fieldset>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-holder form-holder-2">
                                             <fieldset>
-                                                <legend>Diabetes</legend>
+                                                <legend>Diabetes / मधुमेह</legend>
                                                 <div class="container">
                                                     <div class="radio">
-                                                        <input type="radio" value="Yes" name='Diabetes' id="Diabetes-yes"/>
+                                                        <input type="radio" value="Yes" name='Diabetes' id="Diabetes-yes" onclick="show_desc_2();"/>
                                                         <label for="Diabetes-yes"></label>
                                                     </div>
                                                 </div>
                                                 <div class="right">Yes</div>
                                                 <div class="container">
                                                     <div class="radio">
-                                                        <input type="radio" value="No" name='Diabetes' id="Diabetes-no" checked/>
+                                                        <input type="radio" value="No" name='Diabetes' id="Diabetes-no" onclick="hide_desc_2();" />
                                                         <label for="Diabetes-no"></label>
                                                     </div>
                                                 </div>
                                                 <div class="right">No</div>
+                                                <textarea name="description"  rows="3" cols="50" placeholder="Add desc for disease" id="text_desc_2" class="textarea-desc"  style="display: none;" required></textarea>
                                             </fieldset>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-holder form-holder-2">
                                             <fieldset>
-                                                <legend>Heartattack</legend>
+                                                <legend>Heartattack / हार्टटॅक</legend>
                                                 <div class="container">
                                                     <div class="radio">
-                                                        <input type="radio" value="Yes" name='Heartattack' id="Heartattack-yes"/>
+                                                        <input type="radio" value="Yes" name='Heartattack' id="Heartattack-yes" onclick="show_desc_3();"/>
                                                         <label for="Heartattack-yes"></label>
                                                     </div>
                                                 </div>
                                                 <div class="right">Yes</div>
                                                 <div class="container">
                                                     <div class="radio">
-                                                        <input type="radio" value="No" name='Heartattack' id="Heartattack-no" checked/>
+                                                        <input type="radio" value="No" name='Heartattack' id="Heartattack-no" onclick="hide_desc_3();" />
                                                         <label for="Heartattack-no"></label>
                                                     </div>
                                                 </div>
                                                 <div class="right">No</div>
+                                                <textarea name="description"  rows="3" cols="50" placeholder="Add desc for disease" id="text_desc_3" class="textarea-desc"  style="display: none;" required></textarea>
                                             </fieldset>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-holder form-holder-2">
                                             <fieldset>
-                                                <legend>Paralysis</legend>
+                                                <legend>Paralysis / अर्धांगवायू</legend>
                                                 <div class="container">
                                                     <div class="radio">
-                                                        <input type="radio" value="Yes" name='Paralysis' id="Paralysis-yes"/>
+                                                        <input type="radio" value="Yes" name='Paralysis' id="Paralysis-yes" onclick="show_desc_4();"/>
                                                         <label for="Paralysis-yes"></label>
                                                     </div>
                                                 </div>
                                                 <div class="right">Yes</div>
                                                 <div class="container">
                                                     <div class="radio">
-                                                        <input type="radio" value="No" name='Paralysis' id="Paralysis-no" checked/>
+                                                        <input type="radio" value="No" name='Paralysis' id="Paralysis-no" onclick="hide_desc_4();" />
                                                         <label for="Paralysis-no"></label>
                                                     </div>
                                                 </div>
                                                 <div class="right">No</div>
+                                                <textarea name="description"  rows="3" cols="50" placeholder="Add desc for disease" id="text_desc_4" class="textarea-desc"  style="display: none;" required></textarea>
                                             </fieldset>
                                         </div>
-                                    </div>
+                                    </div>        
                                     <div class="form-row">
                                         <div class="form-holder form-holder-2">
                                             <fieldset>
-                                                <legend>Report File</legend>
+                                                <legend>Photo</legend>
                                                 <input type="file" class="form-control" id="report-file" name="report-file">
                                             </fieldset>
                                         </div>
@@ -228,7 +232,7 @@
                             <section>
                                 <div class="inner">
                                     <div class="wizard-header">
-                                        <h3 class="heading">Set Financial Goals</h3>
+                                        <h3 class="heading">Identity Proof</h3>
                                         <p>Please upload your identity proof document and proceed to the next step so we can build your accounts.</p>
                                     </div>
                                     <div class="form-row">
@@ -246,7 +250,7 @@
                                                 <input type="file" class="form-control" id="id-proof-file" name="id-proof-file">
                                             </fieldset>
                                         </div>
-                                    </div>
+                                    </div>                                
                                 </div>
                             </section>
                         </div>
